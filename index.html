@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>CSS Website Layout</title>
@@ -41,13 +40,43 @@ body {
   background-color: #ddd;
   color: black;
 }
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>Jake and Marie</h1>
-  <h1>Font-style:"Comic Sans MS", cursive, sans-serif; Font-size:80px</h1>
+  <p>Finally Happily Ever After</p>
 </div>
 
 <div class="topnav">
@@ -56,6 +85,23 @@ body {
   <a href="#">Registry</a>
 </div>
 
+<div class="row">
+  <div class="column side">
+    <h2>Side</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+  
+  <div class="column middle">
+    <h2>Our Story</h2>
+    <p>We met when we were just 15 years old, in middle school material science class. We started as friends but it quickly turned into something deeper. Pretty soon every band concert, swim meet, and jump rope compitition were spent together; supporting one another. In high school we ensured that every class we had was together.</p>
+    <p>The true test of our love was when Marie went off to college. We were 4,000 miles apart, hours away from one another. We went weeks, even months without seeing eachother. After we made it through those 4 years we knew we could make it through anything.</p>
+  </div>
+  
+  <div class="column side">
+    <h2>Side</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+</div>
+  
 </body>
 </html>
-
